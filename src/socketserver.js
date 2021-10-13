@@ -37,7 +37,8 @@ var socketServer = function (ws) {
 
   var io = require('socket.io')(ws.server, {
     pingTimeout: socketConfig.pingTimeout,
-    pingInterval: socketConfig.pingInterval
+    pingInterval: socketConfig.pingInterval,
+    transports: ['polling', 'websocket']
   })
 
   io.use(function (data, accept) {
@@ -88,8 +89,6 @@ var socketServer = function (ws) {
       }
     )
   })
-
-  io.set('transports', ['polling', 'websocket'])
 
   io.sockets.on('connection', function (socket) {
     // Register Submodules
