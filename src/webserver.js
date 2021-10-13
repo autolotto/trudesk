@@ -16,6 +16,8 @@ var _ = require('lodash')
 var nconf = require('nconf')
   .argv()
   .env()
+
+nconf.set('port', process.env.PORT)
 var async = require('async')
 var express = require('express')
 var WebServer = express()
