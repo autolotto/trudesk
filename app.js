@@ -109,6 +109,7 @@ function loadConfig () {
   nconf.file({
     file: configFile
   })
+  nconf.set('port', process.env.PORT)
 }
 
 function start () {
