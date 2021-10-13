@@ -24,7 +24,7 @@ var winston = require('winston')
 var middleware = require('./middleware')
 var routes = require('./routes')
 var server = require('http').createServer(WebServer)
-var port = nconf.get('port') || process.env.PORT
+var port = process.env.PORT
 
 ;(function (app) {
   'use strict'
